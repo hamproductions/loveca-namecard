@@ -1,14 +1,13 @@
 {
   "title": "Loveca Namecard Maker",
-  "defaultTitlePrefix": "LoveLive! ",
-  "description": "Helps you when HITORIDAKENANTEERABENAIYO",
-  "site_name": "LoveLive! Sorter",
+  "description": "Let's play Loveca",
+  "site_name": "Loveca Namecard Maker",
   "save": "Save",
   "cancel": "Cancel",
   "navigation": {},
   "footer": {
     "created_by": "Created by",
-    "footer_text": "Inspired by a bunch of other sorters of course, Assets are not mine",
+    "footer_text": "Oops, accidentally made it",
     "source_code": "Check out source code on "
   },
   "toast": {},
@@ -24,6 +23,9 @@
   "name": "Name",
   "location": "Location",
   "sns": "SNS/Apps you want to connect",
+  "experience": "Loveca Experience",
+  "months": "Months",
+  "years": "Years",
   "others": "Others",
   "play_style": "Play Style",
   "announcement": "I want to",
@@ -54,5 +56,6 @@
   "liella": "Liella!",
   "hasu": "Hasunosora School Idol Club",
   "file-here": "Place file here",
-  "select-files": "Select file"
+  "select-files": "Select file",
+  "text_color": "Text Color"
 }

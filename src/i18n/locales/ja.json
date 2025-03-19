@@ -7,7 +7,7 @@
   "navigation": {},
   "footer": {
     "created_by": "作者：",
-    "footer_text": "他のランキングアプリからいろいろアイデアいただいています、素材は僕のものじゃないです。",
+    "footer_text": "作っちゃった",
     "source_code": "ソースコードをチェックしてみてね"
   },
   "toast": {},
@@ -23,6 +23,9 @@
   "name": "おなまえ",
   "location": "活動拠点",
   "sns": "つながりたいSNS・アプリ",
+  "experience": "ラブカ履歴",
+  "months": "ヶ月",
+  "years": "年",
   "others": "その他",
   "play_style": "プレイスタイル",
   "announcement": "おしらせ",
@@ -53,5 +56,6 @@
   "liella": "Liella!",
   "hasu": "蓮ノ空女学院スクールアイドルクラブ",
   "file-here": "ファイルをこちらに置いてください",
-  "select-files": "ファイルを選択する"
+  "select-files": "ファイルを選択する",
+  "text_color": "文字の色"
 }

@@ -3,7 +3,7 @@ import type { Area, TextAreaConfig } from '~/types';
 export const AREAS = {
   name: { x1: 402, y1: 87, x2: 757, y2: 146 },
   location: { x1: 776, y1: 87, x2: 1062, y2: 146 },
-  oshi: { x1: 64, y1: 446, x2: 333, y2: 490 },
+  oshi: { x1: 64, y1: 450, x2: 333, y2: 490 },
   favoriteCard: { x1: 917, y1: 365, x2: 1154, y2: 467 },
   message: { x1: 135, y1: 546, x2: 965, y2: 632 },
   image: { x1: 47, y1: 71, x2: 353, y2: 377 },

@@ -84,5 +84,11 @@ export const theme: PartialTheme = {
     }
   },
   keyframes: {},
-  recipes: {}
+  recipes: {
+    formLabel: {
+      base: {
+        fontWeight: 'bold'
+      }
+    }
+  }
 };

@@ -14,14 +14,29 @@ export function Layout({ children }: { children: React.ReactNode }) {
   }, [children]);
 
   return (
-    <Stack position="relative" w="full" minH="100vh" bgColor="bg.default">
-      <Container zIndex="1" position="relative" flex={1} w="full" py={4} px={4}>
+    <Stack
+      position="relative"
+      w="full"
+      minH="100vh"
+      bgColor="bg.default"
+      _print={{ minH: 'unset', gap: 0 }}
+    >
+      <Container
+        zIndex="1"
+        position="relative"
+        flex={1}
+        w="full"
+        py={4}
+        px={4}
+        _print={{ maxW: 'unset', w: 'unset', padding: 0 }}
+      >
         <Stack>
           <HStack
             justifyContent={{ base: 'flex-end', md: 'space-between' }}
             alignItems="center"
             w="full"
             flexWrap="wrap-reverse"
+            _print={{ display: 'none' }}
           >
             <HStack>
               {/* <Link

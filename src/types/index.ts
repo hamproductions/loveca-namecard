@@ -1,4 +1,5 @@
 import type { CanvasTextConfig } from 'canvas-txt';
+import { z } from 'zod';
 
 export type Preset = {
   bg: string;
@@ -20,21 +21,23 @@ export type TextAreaConfig = {
   textConfig?: Partial<Omit<CanvasTextConfig, 'x' | 'y' | 'w' | 'h'>>;
 };
 
-export type NameCardData = {
-  image: string;
-  name: string;
-  location: string;
-  sns: boolean[];
-  snsOther?: string;
-  playStyle: boolean[];
-  announcement: boolean[];
-  oshiSeries: boolean[];
-  oshiMembers: string;
-  favoriteCard: string;
-  message: string;
-  score: number;
-  experience: 'month' | 'year';
-};
+export const nameCardDataSchema = z.object({
+  image: z.string(),
+  name: z.string(),
+  location: z.string(),
+  sns: z.array(z.boolean()).length(4),
+  snsOther: z.string(),
+  playStyle: z.array(z.boolean()).length(4),
+  announcement: z.array(z.boolean()).length(5),
+  oshiSeries: z.array(z.boolean()).length(5),
+  oshiMember: z.string(),
+  favoriteCard: z.string(),
+  message: z.string(),
+  score: z.number(),
+  experience: z.union([z.literal('months'), z.literal('years')])
+});
+
+export type NameCardData = z.infer<typeof nameCardDataSchema>;
 
 export type Area = {
   x1: number;

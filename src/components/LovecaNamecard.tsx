@@ -1,4 +1,4 @@
-import type { MouseEvent } from 'react';
+import type { MouseEvent, RefObject } from 'react';
 import { useCallback, useEffect, useRef } from 'react';
 import { drawText } from 'canvas-txt';
 import cover from 'canvas-image-cover';
@@ -17,8 +17,15 @@ const getArea = (area: Area, theme: Theme) => {
   };
 };
 
-export function LovecaCanvas({ theme, data }: { theme: Theme; data: NameCardData }) {
-  const canvasRef = useRef<HTMLCanvasElement>(null);
+export function LovecaCanvas({
+  canvasRef,
+  theme,
+  data
+}: {
+  canvasRef: RefObject<HTMLCanvasElement | null>;
+  theme: Theme;
+  data: NameCardData;
+}) {
   const cacheRef = useRef<Record<string, HTMLImageElement>>({});
 
   const loadImage = (pic: string) => {
@@ -48,25 +55,27 @@ export function LovecaCanvas({ theme, data }: { theme: Theme; data: NameCardData
   ) => {
     const { x1, x2, y1, y2 } = config.area;
     ctx.fillStyle = config.color ?? theme.color ?? theme.preset.primary;
+    const baseFontSize = config.textConfig?.fontSize ?? 16;
     drawText(ctx, text, {
       x: x1,
       y: y1,
       width: x2 - x1,
       height: y2 - y1,
       font: 'Zen Maru Gothic',
-      fontSize: 16,
       fontWeight: 'bold',
-      ...(config.textConfig ?? {})
+      lineHeight: baseFontSize - 1,
+      ...(config.textConfig ?? {}),
+      fontSize: baseFontSize - Math.round(text.length / 10) * 2
     });
   };
 
-  const drawAreas = (ctx: CanvasRenderingContext2D) => {
-    Object.entries(AREAS).forEach(([name, { x1, y1, x2, y2 }]) => {
-      ctx.strokeStyle = 'red';
-      ctx.lineWidth = 1;
-      ctx.strokeRect(x1, y1, x2 - x1, y2 - y1);
-    });
-  };
+  // const _drawAreas = (ctx: CanvasRenderingContext2D) => {
+  //   Object.entries(AREAS).forEach(([name, { x1, y1, x2, y2 }]) => {
+  //     ctx.strokeStyle = 'red';
+  //     ctx.lineWidth = 1;
+  //     ctx.strokeRect(x1, y1, x2 - x1, y2 - y1);
+  //   });
+  // };
 
   const drawChoice = (ctx: CanvasRenderingContext2D, area: Area, padding: number, theme: Theme) => {
     const { x1, x2, y1, y2 } = getArea(area, theme);
@@ -153,7 +162,7 @@ export function LovecaCanvas({ theme, data }: { theme: Theme; data: NameCardData
       const {
         name,
         location,
-        oshiMembers,
+        oshiMember,
         favoriteCard,
         score,
         message,
@@ -166,7 +175,7 @@ export function LovecaCanvas({ theme, data }: { theme: Theme; data: NameCardData
       } = data;
       renderText(ctx, name, TEXT_FIELDS.name, theme);
       renderText(ctx, location, TEXT_FIELDS.location, theme);
-      renderText(ctx, oshiMembers, TEXT_FIELDS.oshi, theme);
+      renderText(ctx, oshiMember, TEXT_FIELDS.oshi, theme);
       renderText(ctx, favoriteCard, TEXT_FIELDS.favoriteCard, theme);
       renderText(ctx, score + '', TEXT_FIELDS.score, theme);
       renderText(ctx, message, TEXT_FIELDS.message, theme);
@@ -195,7 +204,7 @@ export function LovecaCanvas({ theme, data }: { theme: Theme; data: NameCardData
       });
       await drawHeartChoice(
         ctx,
-        experience === 'month' ? AREAS.monthHeart : AREAS.yearHeart,
+        experience === 'months' ? AREAS.monthHeart : AREAS.yearHeart,
         theme
       );
     },

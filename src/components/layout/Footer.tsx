@@ -8,7 +8,15 @@ export function Footer() {
   const { t } = useTranslation();
 
   return (
-    <Stack gap="1" justifyContent="center" w="full" p="4" textAlign="center" bgColor="bg.muted">
+    <Stack
+      gap="1"
+      justifyContent="center"
+      w="full"
+      p="4"
+      textAlign="center"
+      bgColor="bg.muted"
+      _print={{ display: 'none' }}
+    >
       <Wrap justifyContent="center" w="full">
         <Text>
           {t('footer.created_by')}{' '}
