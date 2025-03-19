@@ -1,0 +1,24 @@
+{
+  "title": "Loveca Namecard Maker",
+  "defaultTitlePrefix": "LoveLive! ",
+  "description": "Helps you when HITORIDAKENANTEERABENAIYO",
+  "site_name": "LoveLive! Sorter",
+  "save": "Save",
+  "cancel": "Cancel",
+  "navigation": {},
+  "footer": {
+    "created_by": "Created by",
+    "footer_text": "Inspired by a bunch of other sorters of course, Assets are not mine",
+    "source_code": "Check out source code on "
+  },
+  "toast": {},
+  "error_page": {
+    "title": "Oopsie",
+    "text": "Sometimes refreshing the page fix it, Clearing the data might also fix it too. If it doesn't ping ",
+    "discord_link": "@hamp on Discord",
+    "to_fix_it": " to fix it.",
+    "copy": "Copy Error Message",
+    "reload": "Reload Page",
+    "clear": "Clear Data and Reload Page"
+  }
+}
