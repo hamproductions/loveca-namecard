@@ -36,7 +36,7 @@ export function LovecaCanvas({ theme, data }: { theme: Theme; data: NameCardData
         reject(new Error((e as string) + ''));
       };
 
-      image.src = pic.startsWith('data') ? pic : getAssetUrl(pic);
+      image.src = pic.startsWith('data') || pic.startsWith('blob') ? pic : getAssetUrl(pic);
     });
   };
 
