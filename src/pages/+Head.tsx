@@ -8,7 +8,7 @@ export function Head() {
 
       <script
         type="text/partytown"
-        src="https://www.googletagmanager.com/gtag/js?id=G-GWEPPCT889"
+        src="https://www.googletagmanager.com/gtag/js?id=G-3LNX5CX7Q1"
       ></script>
 
       <script
@@ -20,7 +20,7 @@ export function Head() {
               dataLayer.push(arguments);
           }
           gtag("js", new Date());
-          gtag("config", "G-GWEPPCT889");
+          gtag("config", "G-3LNX5CX7Q1");
           `
         }}
       />
